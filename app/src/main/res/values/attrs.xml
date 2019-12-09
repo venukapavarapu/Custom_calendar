@@ -3,5 +3,6 @@
     <declare-styleable name="CalendarView">
         <attr name="minimumdate" format="string"/>
         <attr name="hidepreviousdates" format="boolean"/>
+        <attr name="dateformat" format="string"/>
     </declare-styleable>
 </resources>

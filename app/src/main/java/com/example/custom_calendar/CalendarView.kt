@@ -28,6 +28,7 @@ class CalendarView : LinearLayout {
     private var yearFormat: String? = null
     lateinit var calendar: CalendarView
     var hidePreviousDates: Boolean = true
+    private var dateFormat : String? = null
 
     // current displayed month
     private val currentDate = Calendar.getInstance()
@@ -77,6 +78,11 @@ class CalendarView : LinearLayout {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         inflater.inflate(R.layout.control_calendar, this)
 
+        val ta=context.obtainStyledAttributes(attrs,R.styleable.CalendarView)
+        hidePreviousDates=ta.getBoolean(R.styleable.CalendarView_hidepreviousdates,false)
+        dateFormat=ta.getString(R.styleable.CalendarView_dateformat)
+
+        ta.recycle()
         enabledPositions= ArrayList()
         loadDateFormat(attrs)
         assignUiElements()
@@ -319,7 +325,10 @@ class CalendarView : LinearLayout {
             if (month != gridEnabledMonth) {
                 // if this day is outside current month, grey it out
                 view.setTextColor(resources.getColor(R.color.greyed_out))
+                if(hidePreviousDates)
                 view.visibility = View.INVISIBLE
+                else
+                    view.visibility=View.VISIBLE
             } else if (day == today.date && month == today.month && year == today.year) {
                 // if it is today, set it to blue/bold
                 view.setTypeface(null, Typeface.BOLD)

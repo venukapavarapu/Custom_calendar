@@ -9,18 +9,19 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="Calendar"
-        app:titleTextColor="@android:color/white"
+        android:layout_alignParentTop="true"
         android:background="@color/colorPrimary"
-        android:layout_alignParentTop="true"/>
+        app:title="Calendar"
+        app:titleTextColor="@android:color/white" />
 
     <com.example.custom_calendar.CalendarView
         android:id="@+id/calendarView"
-        android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="350dp"
+        android:layout_centerInParent="true"
         android:nestedScrollingEnabled="true"
-        app:hidepreviousdates="true"
+        app:hidepreviousdates="false"
+        app:dateformat="dd/mm/yyyy"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="190dp" />
