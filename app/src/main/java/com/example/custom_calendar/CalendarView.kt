@@ -218,7 +218,6 @@ class CalendarView : LinearLayout {
         val cells = ArrayList<Date>()
         val calendar = currentDate.clone() as Calendar
 
-
         // determine the cell for current month's beginning
         calendar.set(Calendar.DAY_OF_MONTH, 1)
         val monthBeginningCell = calendar.get(Calendar.DAY_OF_WEEK) - 1
