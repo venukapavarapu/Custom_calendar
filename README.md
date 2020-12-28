@@ -5,6 +5,6 @@ You can move years forward and backward direction and months also in backward ad
 
 You can show and hide previous and upcoming dates with respect to years and months
 
-![Screenshot](app/src/main/res/drawable/refence_image.png)
+![Screenshot](app/src/main/res/drawable/refence_image.jpg)
 
 Thanks!!
