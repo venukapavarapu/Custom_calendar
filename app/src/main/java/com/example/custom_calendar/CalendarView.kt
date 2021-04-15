@@ -157,9 +157,9 @@ class CalendarView : LinearLayout {
 
         // long-pressing a day
         grid!!.onItemClickListener =
-            AdapterView.OnItemClickListener({ view, cell, position, id ->
+            AdapterView.OnItemClickListener { view, cell, position, id ->
                 // handle long-press
-              //  val isCickable = view.getTag(view.id) as Boolean
+                //  val isCickable = view.getTag(view.id) as Boolean
                 /*if (!isCickable) {*/
                 /*    return@OnItemClickListener*/
                 /*}*/
@@ -177,36 +177,13 @@ class CalendarView : LinearLayout {
                 }
                 updateCalendar(null)
                 eventHandler!!.onDayLongPress(view.getItemAtPosition(position) as Date)
-            })
+            }
 
         grid!!.onItemLongClickListener =
             AdapterView.OnItemLongClickListener { parent, view, position, id ->
 
                 return@OnItemLongClickListener false
             }
-
-/*
-        grid!!.setOnTouchListener(object : OnSwipeTouchListener(context){
-            override fun onSwipeRight() {
-                super.onSwipeRight()
-                Log.e("position"," right")
-                currentDate.add(Calendar.MONTH, -1)
-                updateCalendar()
-            }
-
-            override fun onSwipeLeft() {
-                super.onSwipeLeft()
-                Log.e("position"," left")
-                currentDate.add(Calendar.MONTH, 1)
-                updateCalendar()
-            }
-
-            override fun onSingleTap() {
-                super.onSingleTap()
-                Log.e("position","singleTap1")
-            }
-        })
-*/
     }
 
     /**
