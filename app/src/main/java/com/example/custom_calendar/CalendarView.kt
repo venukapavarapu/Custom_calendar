@@ -331,7 +331,7 @@ class CalendarView : LinearLayout {
         override fun isEnabled(position: Int): Boolean {
             Log.e("position",enabledPositions.toString())
             if(enabledPositions.size>0)
-            for(i in 0..enabledPositions.size-1) {
+            for(i in 0 until enabledPositions.size) {
                 if (enabledPositions[i] == position) {
                     return false
                 }
